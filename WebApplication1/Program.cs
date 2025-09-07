@@ -7,7 +7,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddProgressiveWebApp(new PwaOptions
 {
-    RegisterServiceWorker = true,  // подключаем service worker
+    RegisterServiceWorker = false,  // подключаем service worker
     RegisterWebmanifest = true,    // подключаем manifest.json
     OfflineRoute = "/offline.html" // страница при офлайн
 });
