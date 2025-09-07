@@ -2,8 +2,8 @@
 const urlsToCache = [
     '/',
     '/index.html',
-    '/css/app.css',
-    '/js/app.js'
+    //'/css/app.css',
+    //'/js/app.js'
 ];
 
 // Установка и кэширование
