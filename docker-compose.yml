@@ -6,3 +6,5 @@ services:
     build:
       context: .
       dockerfile: WebApplication1/Dockerfile
+    ports:
+      - "80:80"
