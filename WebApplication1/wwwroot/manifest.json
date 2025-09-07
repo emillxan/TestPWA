@@ -1,7 +1,7 @@
 {
   "name": "Demo PWA App",
   "short_name": "DemoApp",
-  "start_url": "/",
+  "start_url": "/app.html",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#ffffff",
@@ -14,6 +14,19 @@
     },
     {
       "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
