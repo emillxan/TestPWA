@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button id="installBtn" >Установить приложение</button>
+    <link rel="manifest" href="https://24c21b8cc0c3.ngrok-free.app/manifest.webmanifest">
+</div>
+<script>
+    let deferredPrompt;
+    const installBtn = document.getElementById('installBtn');
+
+    // Событие перед установкой PWA
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();  // предотвращаем автоматический prompt
+        deferredPrompt = e;   // сохраняем событие
+        installBtn.style.display = 'inline-block'; // показываем кнопку
+    });
+
+    // Клик по кнопке
+    installBtn.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+
+        deferredPrompt.prompt(); // показываем стандартное окно установки
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log('User response:', outcome);
+        deferredPrompt = null;
+        installBtn.style.display = 'none'; // скрываем кнопку после выбора
+    });
+</script>
